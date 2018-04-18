@@ -1,0 +1,29 @@
+<div class="header">
+	<header class="toolbar top">
+		<span data-localize='主机' class='title'>主机</span>
+		<button class="btn btn-default" type="button" data-ng-click='edit()' ng-disabled="!(hosts | filter:{is_up:true}).length || !hosts.length" data-localize='编辑'>编辑</button>
+	</header>
+</div>
+<div class="main">
+	<div class="loading" data-ng-class='{cover: hosts.length || hostnetwrong}'></div>
+	<p class="netwrong" data-ng-if="hostnetwrong">请求失败，请检查主控IP</p>
+	<ul class="list-group host">
+		<li data-ng-repeat="host in hosts" class="list-group-item" data-ng-swipe-left='swip(host)'>
+			<div class="wrapper host_wrapper">
+				<div class="console-tip" data-ng-if="host.is_node">主控</div>
+				<div class='content flex' data-ng-class="{'off':!host.is_up,'on':host.is_up}" data-isswip="{{ host.is_up }}" data-swip>
+					<div class='name'>
+						<h4>{{ host.name }}</h4>
+						<span class='ip'>{{ host.ip }}</span>
+					</div>
+					<span ng-if="host.is_up" class='state'>开启</span>
+					<span ng-if="!host.is_up" class='state'>关闭</span>
+				</div>
+				<div class="edit" data-ng-if="host.is_up">
+					<button type="button" class="btn btn-primary" data-localize='重启' ng-click="reboot(host)">重启</button>
+					<button type="button" class="btn btn-danger" data-localize='关机' ng-click="shutdown(host)">关机</button>
+				</div>				
+			</div>
+		</li><div class="cover" data-ng-if="host.is_up"></div>
+	</ul>
+</div>	

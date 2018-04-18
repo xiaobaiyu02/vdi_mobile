@@ -1,0 +1,89 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../font/icomoon.eot?9kg3sv');
+	src:url('../font/icomoon.eot?#iefix9kg3sv') format('embedded-opentype'),
+		url('../font/icomoon.woff?9kg3sv') format('woff'),
+		url('../font/icomoon.ttf?9kg3sv') format('truetype'),
+		url('../font/icomoon.svg?9kg3sv#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-console-E:before {
+	content: "\e600";
+}
+
+.icon-pc:before {
+	content: "\e601";
+}
+
+.icon-Check-3:before {
+	content: "\e602";
+}
+
+.icon-logo:before {
+	content: "\e603";
+}
+
+.icon-set:before {
+	content: "\e604";
+}
+
+.icon-Check-1:before {
+	content: "\e605";
+}
+
+.icon-Check-2:before {
+	content: "\e606";
+}
+
+.icon-ip:before {
+	content: "\e607";
+}
+
+.icon-user:before {
+	content: "\e608";
+}
+
+.icon-classroom:before {
+	content: "\e609";
+}
+
+.icon-home:before {
+	content: "\e60a";
+}
+
+.icon-host:before {
+	content: "\e60b";
+}
+
+.icon-client:before {
+	content: "\e60c";
+}
+
+.icon-password:before {
+	content: "\e60d";
+}
+
+.icon-edit:before {
+	content: "\e60e";
+}
+
+.icon-Console-c:before {
+	content: "\e60f";
+}
+

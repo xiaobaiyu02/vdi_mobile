@@ -1,0 +1,25 @@
+<div class="header">
+	<header class="toolbar top">
+		<a class="btn btn-default btn-select" type="button" href="#/classroom" data-localize='取消'>取消</a>
+		<label class="btn btn-default btn-select check-box-btn">
+	      <input type="checkbox" class="checkbox" ng-change="selectAll(checked)" ng-model="checked"> <span class="">{{btnName()}}</span> 
+	    </label>
+	</header>
+</div>
+<div class="main">
+	<div class="btn-group-vertical btn-block">
+		<label class="btn btn-default flex classroomedit" data-ng-repeat="item in classRooms">
+			<div class='name'>
+				<h4>{{ item.name }}</h4>
+				<span class="ico-computer"></span> {{ item.total_running_terminals }}/{{ item.total_terminals }} 台
+			</div>
+			<input type="checkbox" class="checkbox checkbox-circle" autocomplete="off" ng-click="selectOne()" ng-model="item._selected">
+			<span></span>
+		</label>
+	</div>
+</div>
+<footer class="footer footer-confirm">
+	<button class="btn btn-danger" localize="" ng-disabled="!(classRooms | filter:{_selected:true} ).length" ng-click="shutdown()">关机</button>
+<!-- 	<button class="btn btn-danger" localize="" ng-disabled="!(classRooms | filter:{_selected:true} ).length" ng-click="reboot()">重启</button> -->
+</footer>
+

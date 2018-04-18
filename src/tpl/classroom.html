@@ -1,0 +1,27 @@
+<div class="header">
+	<header class="toolbar top">
+		<span data-localize='主机' class='title'>教室</span>
+		<button class="btn btn-default" type="button" data-ng-click='replace()' ng-disabled="(classRooms | filter:{total_running_terminals: 0}).length == classRooms.length || !classRooms.length"  data-localize='编辑'>编辑</button>
+	</header>
+</div>
+<div class="main">
+	<div class="loading" data-ng-class='{cover: classRooms.length || classnetwrong}'></div>
+	<p class="netwrong" data-ng-if="classnetwrong">请求失败，请检查主控IP</p>
+	<ul class="list-group host classroom">
+		<li data-ng-repeat="item in classRooms" class="list-group-item">
+			<div class="wrapper">
+				<div class='content flex' data-isswip="{{ item.total_running_terminals > 0 ? true:false }}" data-swip>
+					<div class='name'>
+						<h4>{{ item.name }}</h4>
+					</div>
+					<span><span class="icon-client"></span> {{ item.total_running_terminals }}/{{ item.total_terminals }}台</span>
+				</div>
+				<div class="edit">
+					<button type="button" class="btn btn-danger" data-localize='关机' ng-click="shutdown(item)">关机</button>
+				</div>
+			</div>
+				
+		</li>
+
+	</ul>
+</div>	

@@ -1,0 +1,13 @@
+{
+	"name": "vdi",
+	"xwalk_version": "4.0.2",
+	"start_url": "index.html",
+	"icons": [
+		{
+			"src": "icon.ico",
+			"sizes": "128x128",
+			"type": "image/x-icon",
+			"density": "4.0"
+		}
+	]
+}

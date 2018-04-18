@@ -1,0 +1,12 @@
+{
+	"name": "惠普云教室",
+	"xwalk_version": "4.4.2",
+	"start_url": "index.html",
+	"icons": [
+		{
+			"src": "icon.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		}
+	]
+}

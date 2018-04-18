@@ -1,0 +1,25 @@
+<section class="pop">
+	<header class="toolbar top">{{title}}</header>
+	<div class="pop-body">
+		<article class="pop-art">
+			<p>{{message}}</p>
+			<div ng-show="list.length" class="alert alert-success" role="alert">
+				<p ng-repeat="item in list track by $index">{{item}}</p>
+			</div>
+			<!-- <ul class="list-group" >
+			  <li ng-repeat="item in list" class="list-group-item">{{item.ip}}</li>
+			</ul> -->
+		</article>
+	</div>
+	<div class="loadingcontainer" data-ng-class="{loadComplate: !loading || netwrong}">
+		<div class="item top"></div>
+		<div class="item right"></div>
+		<div class="item bottom"></div>
+		<div class="item left"></div>
+	</div>
+	<p class="confrim_netwrong" data-ng-if="netwrong">请求失败，请检查主控IP</p>
+	<div class="btn-group-pop">
+		<a class="btn btn-primary" ng-click="ok()">确定</a>
+		<a class="btn btn-default" ng-click="cancel()">取消</a>
+	</div>
+</section>

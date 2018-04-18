@@ -1,0 +1,5 @@
+gulp
+
+cd E:\work\crosswalk-13.42.319.11
+
+make_apk.py --package=com.hp --manifest=..\vdi_mobile\dist\manifest.json

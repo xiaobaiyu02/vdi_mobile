@@ -1,0 +1,29 @@
+<div class="header">
+	<header class="toolbar top">
+		<a class="btn btn-default" type="button" ng-click="cancel()" data-localize='取消'>取消</a>
+		<label class="btn btn-default btn-select check-box-btn">
+	      <input type="checkbox" class="checkbox" ng-change="selectAll(checked)" ng-model="checked"> <span class="">{{btnName()}}</span> 
+	    </label>
+	</header>
+</div>
+<div class="main">
+	<div class="btn-group-vertical btn-block">
+		<label class="btn btn-default flex flex-edit" data-ng-repeat="host in hosts track by host.id" data-ng-class="{'off':!host.is_up,'on':host.is_up}">
+			<div class="console-tip console-tip-edit" data-ng-if="host.is_node">主控</div>
+			<div class='name'>
+				<h4>{{ host.name }}</h4>
+				<span class='ip'>{{ host.ip }}</span>
+			</div>
+			<span ng-if="host.is_up" class='state'>开启</span>
+			<span ng-if="!host.is_up" class='state'>关闭</span>
+			<input type="checkbox" data-ng-show="host.is_node" class="checkbox checkbox-circle" autocomplete="off" ng-change="consoleSelect(host._selected)" ng-model="host._selected">
+			<input type="checkbox" data-ng-show="!host.is_node" class="checkbox checkbox-circle" autocomplete="off" ng-change="agentSelect(host._selected)" ng-model="host._selected">
+			<span></span>
+		</label> 
+	</div>
+</div>	
+<footer class="footer footer-confirm">
+	<a ng-click="shutdown()" class="btn btn-danger" localize="关机" ng-disabled="!checkOne()">关机</a>
+	<a ng-click="reboot()" class="btn btn-primary btn-sm" localize="重启" ng-disabled="!checkOne()">重启</a>
+</footer>
+

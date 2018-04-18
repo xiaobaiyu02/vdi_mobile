@@ -1,0 +1,21 @@
+{
+  "name": "vdi_mobile",
+  "version": "4.0.2",
+  "description": "vdi app frontend file",
+  "repository": {
+    "type": "git",
+    "url": "git@10.1.56.254:baiyu/vdi_mobile.git"
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-jshint": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-ng-html2js": "*",
+    "gulp-minify-css": "*",
+    "gulp-minify-html": "*",
+    "merge2": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}

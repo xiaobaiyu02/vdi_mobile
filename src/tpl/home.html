@@ -1,0 +1,35 @@
+<div class="header">
+	<header class="toolbar top">
+		<span data-localize='HOME' class='title'>首页</span>
+		<button class="btn btn-default" type="button" data-ng-click='doLogout()' data-localize='logout'>退出</button>
+	</header>
+</div>
+<div class="main" class="col-xs-12">
+	<ul class="list list-home">
+		<li class="item">
+			<div class="checkbox checkbox-expand">
+			    <label>
+			      <input type="checkbox" class="checkbox checkbox-box" ng-click="selectAll()" ng-model="console"> <span localize="HOMEMESS1">关闭主控节点</span> 
+			    </label>
+			</div>
+		</li>
+		<li class="item">
+			<div class="checkbox checkbox-expand">
+			    <label>
+			      <input type="checkbox"  ng-disabled="console" class="checkbox checkbox-box" ng-model="agent"> <span localize="HOMEMESS2">关闭所有计算节点</span>
+			    </label>
+			</div>
+		</li>
+		<li class="item">
+			<div class="checkbox checkbox-expand">
+			    <label>
+			      <input type="checkbox" ng-disabled="console" class="checkbox checkbox-box" ng-model="client"> <span localize="HOMEMESS3">关闭所有终端</span>
+			    </label>
+			</div>
+		</li>
+	</ul>
+	<div class="text-center">
+		<button class="btn btn-primary button-home" ng-disabled="!(console || client || agent)" ng-click="shutdownAll()" localize="OFFDUTY">一键下班</button>
+	</div>
+</div>
+
